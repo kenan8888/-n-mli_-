@@ -11,7 +11,7 @@ import java.util.Optional;
 @RequestMapping("v1/fruit")
 @RequiredArgsConstructor
 public class FruitController {
-    private final FruitService fruitService;         // task:post delete get getbyid update getAll methodlarini elave et
+    private final FruitService fruitService;        // task:post delete get getbyid update getAll methodlarini elave et
 
     @PostMapping("/create")
     public Fruit createFruit(@RequestBody Fruit fruit) {
@@ -23,10 +23,10 @@ public class FruitController {
         return fruitService.getFruit(id);
     }
 
-//    @GetMapping("/all")
-//    public List<Fruit> getAllFruits(){
-//        return fruitService.getAll();
-//    }
+    @GetMapping("/all")
+    public List<Fruit> getAllFruits(){
+        return fruitService.getAllFruits();
+    }
 
     @PutMapping("/{id}")
     public Fruit updateFruit(@PathVariable Long id,@RequestBody Fruit updatedFruit){

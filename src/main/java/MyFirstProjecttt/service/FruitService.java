@@ -12,7 +12,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class FruitService {
 //    private final ModelMapper modelMapper;
-    private FruitRepository fruitRepository;
+    private final FruitRepository fruitRepository;
 
     public Fruit create(Fruit fruit) {
         return fruitRepository.save(fruit);
@@ -22,9 +22,9 @@ public class FruitService {
         return fruitRepository.findById(id);
     }
 
-//    public List<Fruit> getAllFruits(){
-//        return fruitRepository.findAll();
-//    }
+    public List<Fruit> getAllFruits(){
+        return fruitRepository.findAll();
+    }
 
     public Fruit update(Long id, Fruit updatedFruit) {
         Fruit existingFruit = fruitRepository.findById(id)
